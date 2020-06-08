@@ -1,61 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ugliest To-Do</title>
-  <script type="text/javascript" src="https://sdk.userbase.com/1/userbase.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/@stackoverflow/stacks/dist/css/stacks.min.css">
-
-</head>
-
-<body>
-
- <!-- Loading View -->
- <div id="loading-view" class="s-spinner fc-black-300" ></div>
-
- 
-
-  <!-- Auth View -->
-  <div id="auth-view">
-    <h1>Login</h1>
-    <form id="login-form">
-      <input id="login-username" type="text" required placeholder="Username">
-      <input id="login-password" type="password" required placeholder="Password">
-      <input type="submit" value="Sign in">
-    </form>
-    <div id="login-error"></div>
-
-    <h1>Create an account</h1>
-    <form id="signup-form">
-      <input id="signup-username" type="text" required placeholder="Username">
-      <input id="signup-password" type="password" required placeholder="Password">
-      <input type="submit" value="Create an account">
-    </form>
-    <div id="signup-error"></div>
-  </div>
-
-  <!-- To-dos View -->
-  <div id="todo-view">
-    <div id="username"></div>
-    <div id="email"></div>
-    <input type="button" value="Logout" id="logout-button">
-    <div id="logout-error"></div>
-
-    <h1>To-Do List</h1>
-    <div id="todos"></div>
-    <div id="db-loading">Loading to-dos...</div>
-    <div id="db-error"></div>
-
-    <form id="add-todo-form">
-      <input id="add-todo" type="text" required placeholder="To-Do">
-      <input type="submit" value="Add">
-    </form>
-    <div id="add-todo-error"></div>
-  </div>
-
-  <!-- application code -->
-  <script type="text/javascript">
     userbase.init({ appId: '4cda6744-45da-4fe8-8a56-0f8792e5cb58' })
       .then((session) => session.user ? showTodos(session.user) : showAuth())
       .catch(() => showAuth())
@@ -189,6 +132,3 @@
     document.getElementById('todo-view').style.display = 'none'
     document.getElementById('auth-view').style.display = 'none'
 
-  </script>
-</body>
-</html>
