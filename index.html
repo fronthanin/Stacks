@@ -20,7 +20,9 @@
   <div id="auth-view">
     <h1>Login</h1>
     <form id="login-form">
-      <input id="login-username" type="text" required placeholder="Username">
+      <label for="">      License key:      </label>      
+      <input id="login-username" type="text" required placeholder="License key:">
+      <label for="">Password</label>
       <input id="login-password" type="password" required placeholder="Password">
       <input type="submit" value="Sign in">
     </form>
@@ -30,6 +32,7 @@
     <form id="signup-form">
       <input id="signup-username" type="text" required placeholder="Username">
       <input id="signup-password" type="password" required placeholder="Password">
+      <input id="signup-email" type="email" required placeholder="email">
       <input type="submit" value="Create an account">
     </form>
     <div id="signup-error"></div>
@@ -66,7 +69,6 @@
 
       const username = document.getElementById('login-username').value
       const password = document.getElementById('login-password').value
-      const email = document.getElementById('login-email').value
 
       userbase.signIn({ username, password, email, rememberMe: 'local' })
         .then((user) => showTodos(user))
